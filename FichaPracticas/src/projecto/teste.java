@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static FichaPractica07.Ex01.*;
+import static FichaPractica07.Ex01.textReader;
 import static projecto.funcoesAdmin.*;
 
 
@@ -18,6 +18,9 @@ public class teste {
 
             Scanner input = new Scanner(System.in);
             System.out.println("Qual o tipo de utilizador?");
+            System.out.println("ADMIN");
+            System.out.println("CLIENTE");
+
             opcaoMenu = input.nextInt();
 
 
@@ -89,7 +92,7 @@ public class teste {
                     break;
                 case 4: //Animal mais popular
                     // animal com mais interacções
-
+                    animalMaisPopular();
 
                     break;
                 case 5: //Top 3 espécies com mais apadrinhamentos
@@ -97,6 +100,7 @@ public class teste {
                     break;
                 case 6: //Listar padrinhos de um animal
                     // devolver todos os idclientes que tenham nomeEvento == apadrinhamento
+                    listarPadrinhosAnimal();
                     break;
                     case 7: //Espetáculo mais rentável
                         // nomeEvento com maior valor pago

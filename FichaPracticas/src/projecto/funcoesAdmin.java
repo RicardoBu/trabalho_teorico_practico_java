@@ -184,37 +184,38 @@ public class funcoesAdmin {
 
     }
 
-    public static void animalMaisInteracoes() throws FileNotFoundException{
-        int  valorReceitas=0;
-        File ficheiro = new File("Files/interacoes.csv");
-        Scanner sc = new Scanner( ficheiro);
 
-        String linha = sc.nextLine();
-        String[] itensLinhaVisita = linha.split(";");
-
-//        for(int i=0; i<){
-//
-//        }
-
-    }
 
     public static void animalMaisPopular() throws FileNotFoundException {
         int valorReceitas = 0;
+
 
         File ficheiro = new File("Files/interacoes.csv");
         Scanner sc = new Scanner( ficheiro);
 
         String linha = sc.nextLine();
         String[] itensLinha = linha.split(";");
-        String animalLinha = itensLinha[3];
+//        String animalLinha = itensLinha[3];
         String[] vectorAnimais = new String[contarLinhasFicheiro("Files/interacoes.csv")];
 
         // criar array com todos os idAnimals
         for (int i = 0; i < vectorAnimais.length; i++) {
             vectorAnimais[i] = itensLinha[3];
         }
-        contarRepeticoes(vectorAnimais, animalLinha);
+
+        // ver qual o indice do array vectorAnimais que se repete mais vezes
+        for( int i=0;i< vectorAnimais.length;i++){
+            String maior="";
+//            int valorVectorAnimal = Double.parseDouble(vectorAnimais[i]);
+            if(contarRepeticoes(vectorAnimais, vectorAnimais[i])>contarRepeticoes(vectorAnimais, vectorAnimais[i+1])){
+                  maior= vectorAnimais[i];
+                  System.out.println("Maior valor é: "+maior);
+            };
+        }
+//        contarRepeticoes(vectorAnimais, animalLinha);
     }
+
+
 
     public static int contarRepeticoes(String[] vector, String valor) throws FileNotFoundException {
         int contador = 0;
@@ -232,6 +233,28 @@ public class funcoesAdmin {
         return contador;
     }
 
+
+    public static void listarPadrinhosAnimal() throws FileNotFoundException {
+
+        int valorReceitas=0;
+
+        File ficheiro = new File("Files/interacoes.csv");
+        Scanner sc = new Scanner( ficheiro);
+
+        String linha = sc.nextLine();
+//        String[] itensLinha = linha.split(";");
+
+        while(sc.hasNextLine()) {
+            linha = sc.nextLine();
+            String[] itensLinha = linha.split(";");
+            String apadrinhamentos = itensLinha[2];
+            if (itensLinha[2].equals("APADRINHAMENTO")) {
+                System.out.println("Apadrinhamento: "+itensLinha[2]+"por animal: "+itensLinha[3]);
+//                valorReceitas+=Double.parseDouble(itensLinha[5]);
+            }
+        }
+
+    }
 
 
     public static void escolhaFicheiro() throws FileNotFoundException {
