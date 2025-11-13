@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import static FichaPractica07.Ex01.textReader;
+import static projecto.funcoesAuxiliares.*;
 
 public class funcoesAdmin {
 
@@ -196,6 +197,43 @@ public class funcoesAdmin {
 //        }
 
     }
+
+    public static void animalMaisPopular() throws FileNotFoundException {
+        int valorReceitas = 0;
+
+        File ficheiro = new File("Files/interacoes.csv");
+        Scanner sc = new Scanner( ficheiro);
+
+        String linha = sc.nextLine();
+        String[] itensLinha = linha.split(";");
+        String animalLinha = itensLinha[3];
+        String[] vectorAnimais = new String[contarLinhasFicheiro("Files/interacoes.csv")];
+
+        // criar array com todos os idAnimals
+        for (int i = 0; i < vectorAnimais.length; i++) {
+            vectorAnimais[i] = itensLinha[3];
+        }
+        contarRepeticoes(vectorAnimais, animalLinha);
+    }
+
+    public static int contarRepeticoes(String[] vector, String valor) throws FileNotFoundException {
+        int contador = 0;
+
+   // contador a cada vector[i]
+            for (int i = 0; i < vector.length; i++) {
+
+                    if (vector[i].equals(valor)) {
+                        contador++;
+                    }
+
+            }
+
+
+        return contador;
+    }
+
+
+
     public static void escolhaFicheiro() throws FileNotFoundException {
         String opcao;
 

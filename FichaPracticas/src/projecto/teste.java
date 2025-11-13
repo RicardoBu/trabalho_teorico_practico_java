@@ -7,6 +7,7 @@ import java.util.Scanner;
 import static FichaPractica07.Ex01.*;
 import static projecto.funcoesAdmin.*;
 
+
 public class teste {
 
 
@@ -88,6 +89,7 @@ public class teste {
                     break;
                 case 4: //Animal mais popular
                     // animal com mais interacções
+
 
                     break;
                 case 5: //Top 3 espécies com mais apadrinhamentos
