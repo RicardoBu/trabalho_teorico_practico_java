@@ -5,184 +5,11 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import static FichaPractica07.Ex01.textReader;
-import static projecto.funcoesAuxiliares.*;
+
 
 public class funcoesAdmin {
 
-    public static void somaInteracoes() throws FileNotFoundException {
-//        textReader("Files/interacoes.csv");
-        int contador=0;
-        File ficheiro = new File("Files/interacoes.csv");
-        Scanner sc = new Scanner( ficheiro);
 
-        //contador de interacções
-
-        String linha = sc.nextLine();
-
-
-
-        while(sc.hasNextLine()){
-
-            linha = sc.nextLine();
-            contador++;
-        }
-
-        System.out.println("Total de interacções: "+contador);
-
-
-
-
-    }
-
-    public static void somaVisitas() throws FileNotFoundException {
-        int  contadorVisitas=0;
-        File ficheiro = new File("Files/interacoes.csv");
-        Scanner sc = new Scanner( ficheiro);
-
-        //contador de interacções
-
-        String linha = sc.nextLine();
-
-        while(sc.hasNextLine()) {
-            linha = sc.nextLine();
-            String[] itensLinhaVisita = linha.split(";");
-            if(itensLinhaVisita[2].equals("VISITA")){
-                contadorVisitas++;
-            }
-
-        }
-        System.out.println("Visitas: "+contadorVisitas);
-//        System.out.println("Número de Visitas: "+contadorVisitas);
-    }
-
-    public static void somaEspectaculos() throws FileNotFoundException {
-
-        int  contadorEspectaculos=0;
-        File ficheiro = new File("Files/interacoes.csv");
-        Scanner sc = new Scanner( ficheiro);
-
-        String linha = sc.nextLine();
-
-        while(sc.hasNextLine()) {
-            linha = sc.nextLine();
-            String[] itensLinhaVisita = linha.split(";");
-            if (itensLinhaVisita[2].equals("ESPETACULO")) {
-                contadorEspectaculos++;
-            }
-        }  System.out.println("Espectaculos: "+contadorEspectaculos);
-
-    }
-
-    public static void somaAlimentacao() throws FileNotFoundException{
-
-        int  contadorAlimentacao=0;
-        File ficheiro = new File("Files/interacoes.csv");
-        Scanner sc = new Scanner( ficheiro);
-
-        String linha = sc.nextLine();
-
-        while(sc.hasNextLine()) {
-            linha = sc.nextLine();
-            String[] itensLinhaVisita = linha.split(";");
-            if (itensLinhaVisita[2].equals("ALIMENTACAO")) {
-                contadorAlimentacao++;
-            }
-        }  System.out.println("Alimentações: "+contadorAlimentacao);
-
-    }
-
-    public static void somaApadrinhamento() throws FileNotFoundException{
-
-        int  contadorApadrinhamento=0;
-        File ficheiro = new File("Files/interacoes.csv");
-        Scanner sc = new Scanner( ficheiro);
-
-        String linha = sc.nextLine();
-
-        while(sc.hasNextLine()) {
-            linha = sc.nextLine();
-            String[] itensLinhaVisita = linha.split(";");
-            if (itensLinhaVisita[2].equals("APADRINHAMENTO")) {
-                contadorApadrinhamento++;
-            }
-        }  System.out.println("APADRINHAMENTO: "+contadorApadrinhamento);
-
-    }
-
-    public static void receitaVisitas() throws FileNotFoundException{
-
-//        int  contadorVisitas=0;
-        int valorReceitas=0;
-        File ficheiro = new File("Files/interacoes.csv");
-        Scanner sc = new Scanner( ficheiro);
-
-        //contador de interacções
-
-        String linha = sc.nextLine();
-
-        while(sc.hasNextLine()) {
-            linha = sc.nextLine();
-            String[] itensLinhaVisita = linha.split(";");
-            if(itensLinhaVisita[2].equals("VISITA")){
-//                contadorVisitas++;
-                valorReceitas+=Double.parseDouble(itensLinhaVisita[5]);
-
-            }
-
-        }
-        System.out.println("Receita total das visitas: "+valorReceitas);
-
-    }
-
-    public static void receitaEspectaculos() throws FileNotFoundException{
-        int  valorReceitas=0;
-        File ficheiro = new File("Files/interacoes.csv");
-        Scanner sc = new Scanner( ficheiro);
-
-        String linha = sc.nextLine();
-
-        while(sc.hasNextLine()) {
-            linha = sc.nextLine();
-            String[] itensLinhaVisita = linha.split(";");
-            if (itensLinhaVisita[2].equals("ESPETACULO")) {
-                valorReceitas+=Double.parseDouble(itensLinhaVisita[5]);
-            }
-        }  System.out.println("Receita total dos Espectaculos: "+valorReceitas);
-    }
-
-    public static void receitaAlimentacao() throws FileNotFoundException{
-        int  valorReceitas=0;
-        File ficheiro = new File("Files/interacoes.csv");
-        Scanner sc = new Scanner( ficheiro);
-
-        String linha = sc.nextLine();
-
-        while(sc.hasNextLine()) {
-            linha = sc.nextLine();
-            String[] itensLinhaVisita = linha.split(";");
-            if (itensLinhaVisita[2].equals("ALIMENTACAO")) {
-                valorReceitas+=Double.parseDouble(itensLinhaVisita[5]);
-            }
-        }  System.out.println("Receita total da Alimentacao: "+valorReceitas);
-
-    }
-
-    public static void receitaApadrinhamento() throws FileNotFoundException{
-        int  valorReceitas=0;
-        File ficheiro = new File("Files/interacoes.csv");
-        Scanner sc = new Scanner( ficheiro);
-
-        String linha = sc.nextLine();
-
-        while(sc.hasNextLine()) {
-            linha = sc.nextLine();
-            String[] itensLinhaVisita = linha.split(";");
-            if (itensLinhaVisita[2].equals("APADRINHAMENTO")) {
-                valorReceitas+=Double.parseDouble(itensLinhaVisita[5]);
-            }
-        }  System.out.println("Receita total do Apadrinhamento: "+valorReceitas);
-
-    }
 
 
 
@@ -190,13 +17,13 @@ public class funcoesAdmin {
         int valorReceitas = 0;
 
 
-        File ficheiro = new File("Files/interacoes.csv");
+        File ficheiro = new File("FichaPracticas/src/Files/interacoes.csv");
         Scanner sc = new Scanner( ficheiro);
 
         String linha = sc.nextLine();
         String[] itensLinha = linha.split(";");
 //        String animalLinha = itensLinha[3];
-        String[] vectorAnimais = new String[contarLinhasFicheiro("Files/interacoes.csv")];
+        String[] vectorAnimais = new String[contarLinhasFicheiro("FichaPracticas/src/Files/interacoes.csv")];
 
         // criar array com todos os idAnimals
         for (int i = 0; i < vectorAnimais.length; i++) {
@@ -236,25 +63,81 @@ public class funcoesAdmin {
 
     public static void listarPadrinhosAnimal() throws FileNotFoundException {
 
-        int valorReceitas=0;
+        int valorReceitas=0,idAnimal;
+        String idAnimalInteracao;
 
-        File ficheiro = new File("Files/interacoes.csv");
+        File ficheiro = new File("FichaPracticas/src/Files/interacoes.csv");
         Scanner sc = new Scanner( ficheiro);
 
         String linha = sc.nextLine();
 //        String[] itensLinha = linha.split(";");
+
+        System.out.println("Insira um idAnimal:");
+        idAnimal = sc.nextInt();
 
         while(sc.hasNextLine()) {
             linha = sc.nextLine();
             String[] itensLinha = linha.split(";");
             String apadrinhamentos = itensLinha[2];
             if (itensLinha[2].equals("APADRINHAMENTO")) {
-                System.out.println("Apadrinhamento: "+itensLinha[2]+"por animal: "+itensLinha[3]);
-//                valorReceitas+=Double.parseDouble(itensLinha[5]);
+                System.out.println("Apadrinhamento: "+itensLinha[2]+" por animal: "+itensLinha[3]);
+                System.out.println("Valor mensal de Maio do apadrinhamento: "+itensLinha[2]+" por animal: "+itensLinha[3]);
+                System.out.println("Valor mensal de Junho do apadrinhamento: "+itensLinha[2]+" por animal: "+itensLinha[3]);
+                System.out.println("Valor mensal de Julho do apadrinhamento: "+itensLinha[2]+" por animal: "+itensLinha[3]);
+                System.out.println("Valor mensal de Agosto do apadrinhamento: "+itensLinha[2]+" por animal: "+itensLinha[3]);
+                System.out.println("Nome do plano do apadrinhamento: "+itensLinha[4]+" por animal: "+itensLinha[3]);
+//
             }
         }
 
+        File ficheiro2 = new File("FichaPracticas/src/Files/clientes.csv");
+        Scanner sc2 = new Scanner( ficheiro2);
+        String linha2 = sc2.nextLine();
+
+        String[] itensLinha = linha2.split(";");
+        String apadrinhamentos = itensLinha[2];
+
+        if (itensLinha[2].equals("PADRINHAMENTO")) {
+            System.out.println(itensLinha[1]);
+            idAnimalInteracao =  itensLinha[1];
+
+            while(sc2.hasNextLine()) {
+                linha = sc2.nextLine();
+                if(linha.equals("idCliente")){
+                    System.out.println("Nome"+itensLinha[1]+" Email: "+itensLinha[3]);
+                }
+
+            }
+
+        }
+
+
+
     }
+
+    public static void espectaculoMaisRentavel() throws FileNotFoundException {
+        int valorReceitas=0,contador=0;
+        String idAnimalInteracao;
+
+        File ficheiro = new File("FichaPracticas/src/Files/interacoes.csv");
+        Scanner sc = new Scanner( ficheiro);
+
+
+        String linha = sc.nextLine();
+        String[] itensLinha = linha.split(";");
+
+        while(sc.hasNextLine()) {
+            linha = sc.nextLine();
+
+            String apadrinhamentos = itensLinha[2];
+            if (itensLinha[2].equals("ESPETACULO")){
+
+                contador+= Double.parseDouble(itensLinha[5]);
+            }
+            System.out.println("Receita total dos espectaculos"+contador);
+        }
+    }
+
 
 
     public static void escolhaFicheiro() throws FileNotFoundException {
@@ -268,14 +151,45 @@ public class funcoesAdmin {
         System.out.println("Qual o ficheiro que pretende abrir? ");
         opcao=input.next();
         switch(opcao) {
-            case "animais": textReader("Files/animais.csv");
+            case "animais": textReader("FichaPracticas/src/Files/animais.csv");
                 break;
-            case "clientes": textReader("Files/clientes.csv");
+            case "clientes": textReader("FichaPracticas/src/Files/clientes.csv");
                 break;
-            case "interacoes": textReader("Files/interacoes.csv");
+            case "interacoes": textReader("FichaPracticas/src/Files/interacoes.csv");
                 break;
 
         }
 
+    }
+
+    public static int contarLinhasFicheiro(String caminho) throws FileNotFoundException {
+
+        File ficheiro = new File(caminho);
+        Scanner sc = new Scanner(ficheiro);
+
+        int contadorLinhas = 0;
+
+        while (sc.hasNextLine()) {
+            contadorLinhas++;
+            sc.nextLine();
+        }
+
+        return contadorLinhas;
+
+    }
+
+    public static int[] preencherVetor(int tamanho) {
+
+        Scanner input = new Scanner(System.in);
+
+        int[] vetor = new int[tamanho];
+
+        // Leitura de números para o vetor
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print("Insira no vetor[" + i + "]: ");
+            vetor[i] = input.nextInt();
+        }
+
+        return vetor;
     }
 }

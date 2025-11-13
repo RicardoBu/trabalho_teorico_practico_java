@@ -1,11 +1,11 @@
 package projecto;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static FichaPractica07.Ex01.textReader;
 import static projecto.funcoesAdmin.*;
+import static projecto.funcoesReceita.*;
+import static projecto.funcoesSoma.*;
 
 
 public class teste {
