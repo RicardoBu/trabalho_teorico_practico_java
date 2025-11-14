@@ -6,6 +6,7 @@ import java.util.Scanner;
 import static projecto.funcoesAdmin.*;
 import static projecto.funcoesReceita.*;
 import static projecto.funcoesSoma.*;
+import static projecto.funcoesCliente.*;
 
 
 public class teste {
@@ -118,7 +119,7 @@ public class teste {
 
     }
 
-    public static void cliente() {
+    public static void cliente() throws FileNotFoundException {
         int opcao;
         do{
 
@@ -137,15 +138,17 @@ public class teste {
 
                 case 1: //Ver catálogo de animais por habitat
                     // filtrar animais por habitat
+                    filtrarAnimais();
                     break;
                 case 2: // Ver atividades de um animal (espetáculos e alimentações)
                     // depois de escolher um animal, filtrar espectáculos e alimentação
                     break;
                 case 3: //Simular apadrinhamento de um animal
                     break;
-                case 4: //Encontrar "amigos de zoo"
+                case 4: //Jogo: adivinha a espécie
+                    jogo();
                     break;
-                case 5: //Jogo: adivinha a espécie
+                case 0: //Sair
                     break;
                 default: System.out.println("Opção inválida");
 
