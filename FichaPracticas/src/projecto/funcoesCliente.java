@@ -34,7 +34,7 @@ public class funcoesCliente {
             for( int i=0; i<somaLinhasHabitat.length;i++){
                 boolean repetido= false;
                 for(int j=0; j<somaLinhasHabitat.length;j++) {
-                    if(somaLinhasHabitat[i] == somaLinhasHabitat[j] && i != j){
+                    if(somaLinhasHabitat[i].equals(somaLinhasHabitat[j]) && i != j){
                         repetido = true;
 
 //                        break;

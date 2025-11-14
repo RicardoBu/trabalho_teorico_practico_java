@@ -31,7 +31,7 @@ public class funcoesAdmin {
         }
 
         // ver qual o indice do array vectorAnimais que se repete mais vezes
-        for( int i=0;i< vectorAnimais.length;i++){
+        for( int i=0;i< vectorAnimais.length-1;i++){
             String maior="";
 //            int valorVectorAnimal = Double.parseDouble(vectorAnimais[i]);
             if(contarRepeticoes(vectorAnimais, vectorAnimais[i])>contarRepeticoes(vectorAnimais, vectorAnimais[i+1])){
